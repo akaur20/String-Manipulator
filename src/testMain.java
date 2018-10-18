@@ -11,23 +11,41 @@ public class testMain {
 		
 		while (tryAgain == true)
 		{
-			System.out.println("What method would  you like to run? Type Vowel or Reverse");
+			System.out.println("What method would  you like to run? Type vowel or reverse");
 			String choice = in.next();
 			
-			while (!choice.equals("Vowel") && !choice.equals("Reverse"))
+			while (!choice.equals("vowel") && !choice.equals("reverse"))
 			{
-				System.out.println("Wrong!! What method would  you like to run? Type Vowel or Reverse");
-				choice = in.next();	
-				
-			}
-			if (choice.equals("Vowel"))
-			{
-				System.out.println(string.noVowels("hello"));
+				System.out.println("Wrong!! What method would  you like to run? Type vowel or reverse");
+				choice = in.next();		
 			}
 			
-			if (choice.equals("Reverse"))
+			System.out.println("Please enter a word to convert: ");
+			String userWord = in.next();
+			if (choice.equals("vowel"))
 			{
-				System.out.println(string.reverse("hello"));
+				System.out.println(string.noVowels(userWord));
+			}
+			
+			if (choice.equals("reverse"))
+			{
+				System.out.println(string.reverse(userWord));
+			}
+			
+			System.out.println("Would you like to play again? Say yes or no");
+			String playAgain = in.next();
+			
+			while (!playAgain.equals("yes") && !playAgain.equals("no"))
+			{
+				System.out.println("Would you like to play again? Say yes or no");
+				playAgain = in.next();
+				
+			}
+			
+			if (playAgain.equals("no"))
+			{
+				tryAgain = false;
+				System.out.println("Thanks for playing!");
 			}
 			
 		}
